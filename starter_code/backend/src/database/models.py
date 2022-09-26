@@ -36,7 +36,7 @@ def db_drop_and_create_all():
     # add one demo row which is helping in POSTMAN test
     drink = Drink(
         title='water',
-        recipe='[{"name": "water", "color": "blue", "parts": 1}]'
+        recipe='[{"name": "water", "color": "cyan", "parts": 1}]'
     )
 
 
