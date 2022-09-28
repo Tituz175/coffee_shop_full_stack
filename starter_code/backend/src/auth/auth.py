@@ -3,11 +3,19 @@ from flask import request, _request_ctx_stack
 from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
+import os
+from dotenv import load_dotenv
+
+# load .env file in backend dir using python-dotenv lib
+path = os.path.dirname(os.path.dirname(__file__))
+env_file = os.path.join(path, ".env")
+load_dotenv(env_file)
 
 
-AUTH0_DOMAIN = 'fs-coffee-shop.us.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'coffee'
+
+AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
+ALGORITHMS = [os.getenv('ALGORITHMS')]
+API_AUDIENCE = os.getenv('API_AUDIENCE')
 
 # AuthError Exception
 '''
